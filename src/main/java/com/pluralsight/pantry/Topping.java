@@ -1,8 +1,7 @@
 package com.pluralsight.pantry;
 
-
 public abstract class Topping{
-    //protected?
+
     private String toppingName;
 
     public Topping(String toppingName) {
