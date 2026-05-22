@@ -1,6 +1,17 @@
 package com.pluralsight.pantry;
 
-import com.pluralsight.kitchen.IPayable;
 
-public abstract class Topping implements IPayable {
+public abstract class Topping{
+    //protected?
+    private String toppingName;
+
+    public Topping(String toppingName) {
+        this.toppingName = toppingName;
+    }
+
+    public String getToppingName() {
+        return toppingName;
+    }
+
+    public abstract double getPrice(String size);
 }
