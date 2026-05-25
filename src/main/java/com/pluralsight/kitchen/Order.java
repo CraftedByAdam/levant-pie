@@ -1,4 +1,41 @@
 package com.pluralsight.kitchen;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order{
+    private LocalDateTime dateTime;
+    private List<IPayable> items;
+
+    public Order(){
+        this.dateTime = LocalDateTime.now();
+        this.items = new ArrayList<>();
+    }
+
+    public String getDateTime() {
+        return  dateTime.toString();
+    }
+
+    public List<IPayable> getItems() {
+        return items;
+    }
+
+    public double calculateTotal(){
+        double total = 0;
+        for (IPayable item : items){
+            total += item.getPrice();
+        }
+        return  total;
+    }
+
+    public void addItem(IPayable item){
+        this.items.add(item);
+    }
+
+    public void displayOrder(){
+        for (IPayable item : items){
+            System.out.println(item.toString());
+        }
+    }
 }
