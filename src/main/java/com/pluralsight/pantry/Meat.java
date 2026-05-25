@@ -6,7 +6,6 @@ public class Meat extends PremiumTopping{
         super(toppingName, isExtra);
     }
 
-    //Make better
     @Override
     public double getPrice(String size) {
         double price = 0;
