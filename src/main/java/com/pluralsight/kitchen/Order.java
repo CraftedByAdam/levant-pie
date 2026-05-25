@@ -13,8 +13,8 @@ public class Order{
         this.items = new ArrayList<>();
     }
 
-    public String getDateTime() {
-        return  dateTime.toString();
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 
     public List<IPayable> getItems() {
@@ -26,7 +26,7 @@ public class Order{
         for (IPayable item : items){
             total += item.getPrice();
         }
-        return  total;
+        return total;
     }
 
     public void addItem(IPayable item){
