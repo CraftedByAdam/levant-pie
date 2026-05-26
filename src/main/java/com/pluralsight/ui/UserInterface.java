@@ -46,10 +46,10 @@ public class UserInterface {
                     break;
                 case "0":
                     running = false;
-                    System.out.println("\nThanks For Visiting!😁");
+                    System.out.println("\nThank's For Visiting!😁");
                     break;
                 default:
-                    System.out.println("\n❌Invalid choice try again🔄️\n");
+                    System.out.println("\n❌Invalid choice, try again🔄️\n");
             }
         }
     }
@@ -58,11 +58,11 @@ public class UserInterface {
         boolean running = true;
 
         while(running){
-            System.out.println("\n1) Add Pizza🍕");
+            System.out.println(GREEN + "\n1) Add Pizza🍕");
             System.out.println("2) Add Drink🥤");
             System.out.println("3) Add Garlic Knots🧄🍞");
             System.out.println("4) Checkout✅");
-            System.out.println("5) Cancel Order❌\n");
+            System.out.println("5) Cancel Order❌\n" + RESET);
 
             System.out.print(WHITE + "Enter your choice: " + RESET);
             String choice = scanner.nextLine();
@@ -89,7 +89,56 @@ public class UserInterface {
         }
     }
 
-    public void addPizza(){}
+    public void addPizza() {
+        String sizeChoice = "";
+        String stuffedCrustChoice;
+        String crustChoice;
+
+        while (true) {
+            System.out.println(GREEN + "\nPick the Pizza size📏");
+            System.out.println("8");
+            System.out.println("12");
+            System.out.println("16" + RESET);
+            System.out.print(WHITE + "\nEnter your choice: " + RESET);
+            sizeChoice = scanner.nextLine();
+
+            if (sizeChoice.equals("8") || sizeChoice.equals("12") || sizeChoice.equals("16")) {
+                break;
+            }else {
+                System.out.println("\n❌Invalid choice try again🔄️");
+            }
+        }
+
+        boolean isStuffed = false;
+        while (true) {
+            System.out.println(GREEN + "\nWould you like stuffed crust?");
+            System.out.println("1)Yes");
+            System.out.println("2)No" + RESET);
+            System.out.print(WHITE + "\nEnter your choice: " + RESET);
+            stuffedCrustChoice = scanner.nextLine();
+
+            if (stuffedCrustChoice.equals("1")) {
+                isStuffed = true;
+                break;
+            }else if (stuffedCrustChoice.equals("2")) {
+                isStuffed = false;
+                break;
+            }else {
+                System.out.println("\n❌Invalid choice try again🔄️");
+            }
+        }
+
+        System.out.println(GREEN + "\nWhat Kind of crust would you like?");
+        System.out.println("Thin");
+        System.out.println("Regular");
+        System.out.println("Thick");
+        System.out.println("Cauliflower" + RESET);
+        System.out.print(WHITE + "\nEnter your choice: " + RESET);
+        crustChoice = scanner.nextLine();
+
+        Pizza pizza = new Pizza(crustChoice, isStuffed, sizeChoice);
+        order.addItem(pizza);
+    }
 
     public void addDrink(){}
 
