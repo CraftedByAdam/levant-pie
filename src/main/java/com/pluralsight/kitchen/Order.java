@@ -34,6 +34,8 @@ public class Order{
     }
 
     public void displayOrder(){
+        //Make a string builder
+        //test it
         for (IPayable item : items){
             System.out.println(item.toString());
         }
