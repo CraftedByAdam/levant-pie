@@ -2,6 +2,7 @@ package com.pluralsight.levantpie.ui;
 
 import com.pluralsight.levantpie.models.toppings.Regular;
 import com.pluralsight.levantpie.models.toppings.Sauce;
+import com.pluralsight.levantpie.models.toppings.Side;
 import com.pluralsight.levantpie.models.toppings.premium.Cheese;
 import com.pluralsight.levantpie.models.toppings.premium.Meat;
 import com.pluralsight.levantpie.services.ReceiptFileManager;
@@ -471,7 +472,7 @@ public class UserInterface {
                     System.out.println(PURPLE + "\nAnchovies added!🙌" + RESET);
                 }
 
-                case "0" ->regularToppingRunning  = false;
+                case "0" -> regularToppingRunning = false;
 
                 default -> System.out.println("\n❌Invalid choice try again🔄️");
             }
@@ -522,6 +523,30 @@ public class UserInterface {
             }
         }
 
+        //sides menu
+        boolean sideRunning = true;
+        while (sideRunning) {
+            System.out.println(GREEN + "\nSelect Sides");
+            System.out.println("1)Red Pepper🌶️");
+            System.out.println("2)Parmesan🧀🧂");
+            System.out.println("0)Done adding sides" + RESET);
+            System.out.print(WHITE + "\nEnter your choice: " + RESET);
+            String sideChoice = scanner.nextLine();
+
+            switch (sideChoice) {
+                case "1" -> {
+                    pizza.addTopping(new Side("Red Pepper"));
+                    System.out.println(PURPLE + "\nRed Pepper!🙌" + RESET);
+                }
+                case "2" -> {
+                    pizza.addTopping(new Side("Parmesan"));
+                    System.out.println(PURPLE + "\nParmesan added!🙌" + RESET);
+                }
+                case "0" -> sideRunning = false;
+
+                default -> System.out.println("\n❌Invalid choice try again🔄️");
+            }
+        }
     }
 
     public void addDrink(){}
