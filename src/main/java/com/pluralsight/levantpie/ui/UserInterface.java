@@ -491,15 +491,30 @@ public class UserInterface {
             String sauceChoice = scanner.nextLine();
 
             switch (sauceChoice) {
-                case "1" -> pizza.addTopping(new Sauce("Marinara"));
+                case "1" -> {
+                    pizza.addTopping(new Sauce("Marinara"));
+                    System.out.println(PURPLE + "\nMarinara added!🙌" + RESET);
+                }
 
-                case "2" -> pizza.addTopping(new Sauce("Alfredo"));
+                case "2" -> {
+                    pizza.addTopping(new Sauce("Alfredo"));
+                    System.out.println(PURPLE + "\nAlfredo added!🙌" + RESET);
+                }
 
-                case "3" -> pizza.addTopping(new Sauce("Pesto"));
+                case "3" -> {
+                    pizza.addTopping(new Sauce("Pesto"));
+                    System.out.println(PURPLE + "\nPesto added!🙌" + RESET);
+                }
 
-                case "4" -> pizza.addTopping(new Sauce("BBQ"));
+                case "4" -> {
+                    pizza.addTopping(new Sauce("BBQ"));
+                    System.out.println(PURPLE + "\nBBQ added!🙌" + RESET);
+                }
 
-                case "5" -> pizza.addTopping(new Sauce("Olive Oil"));
+                case "5" -> {
+                    pizza.addTopping(new Sauce("Olive Oil"));
+                    System.out.println(PURPLE + "\nOlive Oil added!🙌" + RESET);
+                }
 
                 case "0" -> sauceRunning = false;
 
