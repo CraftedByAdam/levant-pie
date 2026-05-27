@@ -49,7 +49,8 @@ public class Pizza implements IPayable{
             totalPrice = 16.50;
         }
         if (isStuffed) {
-            totalPrice += 3.20;
+            //this is free not extra price
+            //totalPrice += 3.20;
         }
         for (Topping topping : toppings) {
             totalPrice += topping.getPrice(size) ;
