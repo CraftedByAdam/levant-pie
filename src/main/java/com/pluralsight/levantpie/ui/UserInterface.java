@@ -98,6 +98,7 @@ public class UserInterface {
         String sizeChoice = "";
         String stuffedCrustChoice;
 
+        //crust type
         label:
         while (true) {
             System.out.println(GREEN + "\nWhat Kind of crust would you like?");
@@ -127,6 +128,7 @@ public class UserInterface {
             }
         }
 
+        //pizza size
         while (true) {
             System.out.println(GREEN + "\nPick the Pizza size📏");
             System.out.println("8");
@@ -142,6 +144,7 @@ public class UserInterface {
             }
         }
 
+        //is it stuffed
         boolean isStuffed = false;
         while (true) {
             System.out.println(GREEN + "\nWould you like stuffed crust?");
@@ -163,6 +166,7 @@ public class UserInterface {
         Pizza pizza = new Pizza(crustChoice, isStuffed, sizeChoice);
         order.addItem(pizza);
 
+        //meat menu
         boolean isExtra = false;
         boolean meatRunning = true;
         while (meatRunning) {
@@ -292,6 +296,7 @@ public class UserInterface {
                 default -> System.out.println("\n❌Invalid choice try again🔄️");
             }
         }
+        //cheese menu
         boolean cheeseRunning = true;
         while (cheeseRunning) {
             System.out.println(GREEN + "\nCheese Toppings🧀");
@@ -399,6 +404,48 @@ public class UserInterface {
                 case "0" -> {
                     cheeseRunning = false;
                 }
+                default -> System.out.println("\n❌Invalid choice try again🔄️");
+            }
+        }
+
+        //regular menu
+        boolean regularToppingRunning = true;
+        while (regularToppingRunning) {
+            System.out.println(GREEN + "\nSelect Toppings");
+            System.out.println("1)Onions🧅");
+            System.out.println("2)Mushrooms🍄‍🟫");
+            System.out.println("3)Bell Peppers🫑");
+            System.out.println("4)Olives🫒");
+            System.out.println("5)Tomatoes🍅");
+            System.out.println("6)Spinach🌿");
+            System.out.println("7)Basil🌿");
+            System.out.println("8)Pineapple🍍");
+            System.out.println("9)Anchovies🐟");
+            System.out.println("0)Done adding Toppings" + RESET);
+            System.out.print(WHITE + "\nEnter your choice: " + RESET);
+            String regularToppingChoice = scanner.nextLine();
+
+            switch (regularToppingChoice) {
+                case "1" -> pizza.addTopping(new Regular("Onions"));
+
+                case "2" -> pizza.addTopping(new Regular("Mushrooms"));
+
+                case "3" -> pizza.addTopping(new Regular("Bell Peppers"));
+
+                case "4" -> pizza.addTopping(new Regular("Olives"));
+
+                case "5" -> pizza.addTopping(new Regular("Tomatoes"));
+
+                case "6" -> pizza.addTopping(new Regular("Spinach"));
+
+                case "7" -> pizza.addTopping(new Regular("Basil"));
+
+                case "8" -> pizza.addTopping(new Regular("Pineapple"));
+
+                case "9" -> pizza.addTopping(new Regular("Anchovies"));
+
+                case "0" ->regularToppingRunning  = false;
+
                 default -> System.out.println("\n❌Invalid choice try again🔄️");
             }
         }
