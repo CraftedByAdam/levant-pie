@@ -33,8 +33,8 @@ public class UserInterface {
 
         boolean running = true;
         while(running){
-            System.out.println(BLUE + "1) New Order🛍️" + RESET);
-            System.out.println(RED + "0) Exit👋\n" + RESET);
+            System.out.println(BLUE + "1)New Order🛍️" + RESET);
+            System.out.println(RED + "0)Exit👋\n" + RESET);
 
             System.out.print(WHITE + "Enter your choice: " + RESET);
             String choice = scanner.nextLine();
@@ -58,11 +58,11 @@ public class UserInterface {
         boolean running = true;
 
         while(running){
-            System.out.println(GREEN + "\n1) Add Pizza🍕");
-            System.out.println("2) Add Drink🥤");
-            System.out.println("3) Add Garlic Knots🧄🍞");
-            System.out.println("4) Checkout✅");
-            System.out.println("5) Cancel Order❌\n" + RESET);
+            System.out.println(GREEN + "\n1)Add Pizza🍕");
+            System.out.println("2)Add Drink🥤");
+            System.out.println("3)Add Garlic Knots🧄🍞");
+            System.out.println("4)Checkout✅");
+            System.out.println("5)Cancel Order❌\n" + RESET);
 
             System.out.print(WHITE + "Enter your choice: " + RESET);
             String choice = scanner.nextLine();
