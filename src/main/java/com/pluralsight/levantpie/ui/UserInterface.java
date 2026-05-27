@@ -449,6 +449,36 @@ public class UserInterface {
                 default -> System.out.println("\n❌Invalid choice try again🔄️");
             }
         }
+
+        //sauce menu
+        boolean sauceRunning = true;
+        while (sauceRunning) {
+            System.out.println(GREEN + "\nSelect Sauce");
+            System.out.println("1)marinara🍅");
+            System.out.println("2)Alfredo🧀");
+            System.out.println("3)Pesto🌿");
+            System.out.println("4)BBQ");
+            System.out.println("5)Olive Oil🫒");
+            System.out.println("0)Done adding sauce" + RESET);
+            System.out.print(WHITE + "\nEnter your choice: " + RESET);
+            String sauceChoice = scanner.nextLine();
+
+            switch (sauceChoice) {
+                case "1" -> pizza.addTopping(new Sauce("Marinara"));
+
+                case "2" -> pizza.addTopping(new Sauce("Alfredo"));
+
+                case "3" -> pizza.addTopping(new Sauce("Pesto"));
+
+                case "4" -> pizza.addTopping(new Sauce("BBQ"));
+
+                case "5" -> pizza.addTopping(new Sauce("Olive Oil"));
+
+                case "0" -> sauceRunning = false;
+
+                default -> System.out.println("\n❌Invalid choice try again🔄️");
+            }
+        }
     }
 
     public void addDrink(){}
