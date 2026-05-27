@@ -49,10 +49,7 @@ public class Pizza implements IPayable {
         } else if (size.equals("16")) {
             totalPrice = 16.50;
         }
-        if (isStuffed) {
-            //this is free not extra price
-            //totalPrice += 3.20;
-        }
+
         for (Topping topping : toppings) {
             totalPrice += topping.getPrice(size) ;
         }
@@ -61,6 +58,21 @@ public class Pizza implements IPayable {
 
     @Override
     public String toString() {
-        return "Pizza: " + "crustType: " + crustType + ", isStuffed: " + isStuffed + ", size: " + size + ", toppings: " + toppings + "Price: $" + getPrice();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Pizza Order:\n");
+        stringBuilder.append("-------------\n");
+        stringBuilder.append("Size: ").append(size).append("inch\n") ;
+        stringBuilder.append(crustType).append(" ") ;
+        if (isStuffed) {
+            stringBuilder.append("stuffed crust");
+        }
+        for (Topping topping : toppings) {
+            stringBuilder.append("\n");
+            stringBuilder.append("Topping: ").append(topping.getToppingName()).append("\n");
+        }
+        stringBuilder.append("Price: ");
+        stringBuilder.append(String.format("$%.2f", getPrice()));
+
+        return stringBuilder.toString();
     }
 }
