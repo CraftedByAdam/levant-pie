@@ -1,6 +1,8 @@
-package com.pluralsight.kitchen;
+package com.pluralsight.levantpie.models.products;
 
-public class GarlicKnots implements IPayable{
+import com.pluralsight.levantpie.order.IPayable;
+
+public class GarlicKnots implements IPayable {
 
     private String flavor;
 

@@ -1,8 +1,8 @@
-package com.pluralsight.pantry;
+package com.pluralsight.levantpie.models.toppings.premium;
 
-public class Cheese extends PremiumTopping{
+public class Meat extends PremiumTopping {
 
-    public Cheese(String toppingName, boolean isExtra) {
+    public Meat(String toppingName, boolean isExtra) {
         super(toppingName, isExtra);
     }
 
@@ -10,19 +10,19 @@ public class Cheese extends PremiumTopping{
     public double getPrice(String size) {
         double price = 0;
         if (size.equals("8")) {
-            price = 0.75;
+            price = 1.00;
             if (isExtra()) {
-                price += 0.30;
+                price += 0.50;
             }
         }else if (size.equals("12")) {
-            price = 1.50;
+            price = 2.00;
             if (isExtra()) {
-                price += 0.60;
+                price += 1.00;
             }
         }else if (size.equals("16")) {
-            price = 2.25;
+            price = 3.00;
             if (isExtra()) {
-                price += 0.90;
+                price += 1.50;
             }
         }
         return price;

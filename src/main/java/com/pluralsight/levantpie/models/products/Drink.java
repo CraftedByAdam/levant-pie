@@ -1,6 +1,8 @@
-package com.pluralsight.kitchen;
+package com.pluralsight.levantpie.models.products;
 
-public class Drink implements IPayable{
+import com.pluralsight.levantpie.order.IPayable;
+
+public class Drink implements IPayable {
 
     private String flavor;
     private String size;

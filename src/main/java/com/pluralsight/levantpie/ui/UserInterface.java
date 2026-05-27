@@ -1,10 +1,10 @@
-package com.pluralsight.ui;
+package com.pluralsight.levantpie.ui;
 
-import com.pluralsight.data.ReceiptFileManager;
-import com.pluralsight.kitchen.Drink;
-import com.pluralsight.kitchen.GarlicKnots;
-import com.pluralsight.kitchen.Order;
-import com.pluralsight.kitchen.Pizza;
+import com.pluralsight.levantpie.services.ReceiptFileManager;
+import com.pluralsight.levantpie.models.products.Drink;
+import com.pluralsight.levantpie.models.products.GarlicKnots;
+import com.pluralsight.levantpie.order.Order;
+import com.pluralsight.levantpie.models.products.Pizza;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.pluralsight.pantry;
+package com.pluralsight.levantpie.models.toppings;
 
 public class Side extends Topping{
     public Side(String toppingName) {

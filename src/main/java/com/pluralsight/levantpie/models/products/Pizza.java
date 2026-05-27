@@ -1,11 +1,12 @@
-package com.pluralsight.kitchen;
+package com.pluralsight.levantpie.models.products;
 
-import com.pluralsight.pantry.Topping;
+import com.pluralsight.levantpie.order.IPayable;
+import com.pluralsight.levantpie.models.toppings.Topping;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pizza implements IPayable{
+public class Pizza implements IPayable {
     private String crustType;
     private boolean isStuffed;
     private String size;

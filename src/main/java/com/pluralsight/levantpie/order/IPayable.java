@@ -1,4 +1,4 @@
-package com.pluralsight.kitchen;
+package com.pluralsight.levantpie.order;
 
 public interface IPayable {
 

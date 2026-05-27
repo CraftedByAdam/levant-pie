@@ -1,4 +1,4 @@
-package com.pluralsight.pantry;
+package com.pluralsight.levantpie.models.toppings;
 
 public abstract class Topping{
 

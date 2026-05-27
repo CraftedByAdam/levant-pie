@@ -1,6 +1,8 @@
-package com.pluralsight.pantry;
+package com.pluralsight.levantpie.models.toppings.premium;
 
-public abstract class PremiumTopping extends Topping{
+import com.pluralsight.levantpie.models.toppings.Topping;
+
+public abstract class PremiumTopping extends Topping {
 
     private boolean isExtra;
 
