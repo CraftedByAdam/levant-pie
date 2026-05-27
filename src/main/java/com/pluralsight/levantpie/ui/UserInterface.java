@@ -292,6 +292,116 @@ public class UserInterface {
                 default -> System.out.println("\n❌Invalid choice try again🔄️");
             }
         }
+        boolean cheeseRunning = true;
+        while (cheeseRunning) {
+            System.out.println(GREEN + "\nCheese Toppings🧀");
+            System.out.println("Select your Cheese (0 when done)");
+            System.out.println("1)Mozzarella🧀");
+            System.out.println("2)Parmesan🧀");
+            System.out.println("3)Ricotta🧀");
+            System.out.println("4)Goat Cheese🐐🧀");
+            System.out.println("5)Buffalo🦬🧀");
+            System.out.println("0)Done adding cheese" + RESET);
+            System.out.print(WHITE + "\nEnter your choice: " + RESET);
+            String cheeseChoice = scanner.nextLine();
+
+            switch (cheeseChoice) {
+                case "1" -> {
+                    while (true) {
+                        System.out.print(GREEN + "\nExtra Mozzarella? (Y/N): " + RESET);
+                        String extraMozzarella = scanner.nextLine();
+                        if (extraMozzarella.equalsIgnoreCase("Y")) {
+                            isExtra = true;
+                            break;
+                        } else if (extraMozzarella.equalsIgnoreCase("N")) {
+                            isExtra = false;
+                            break;
+                        } else {
+                            System.out.println("\n❌Invalid choice try again🔄️");
+                        }
+                    }
+                    Cheese mozzarella = new Cheese("Mozzarella", isExtra);
+                    pizza.addTopping(mozzarella);
+                    System.out.println(PURPLE + "\nMozzarella added!🙌" + RESET);
+                }
+                case "2" -> {
+                    while (true) {
+                        System.out.print(GREEN + "\nExtra Parmesan? (Y/N): " + RESET);
+                        String extraParmesan = scanner.nextLine();
+                        if (extraParmesan.equalsIgnoreCase("Y")) {
+                            isExtra = true;
+                            break;
+                        } else if (extraParmesan.equalsIgnoreCase("N")) {
+                            isExtra = false;
+                            break;
+                        } else {
+                            System.out.println("\n❌Invalid choice try again🔄️");
+                        }
+                    }
+                    Cheese parmesan = new Cheese("Parmesan", isExtra);
+                    pizza.addTopping(parmesan);
+                    System.out.println(PURPLE + "\nParmesan added!🙌" + RESET);
+                }
+                case "3" -> {
+                    while (true) {
+                        System.out.print(GREEN + "\nExtra Ricotta? (Y/N): " + RESET);
+                        String extraRicotta = scanner.nextLine();
+                        if (extraRicotta.equalsIgnoreCase("Y")) {
+                            isExtra = true;
+                            break;
+                        } else if (extraRicotta.equalsIgnoreCase("N")) {
+                            isExtra = false;
+                            break;
+                        } else {
+                            System.out.println("\n❌Invalid choice try again🔄️");
+                        }
+                    }
+                    Cheese ricotta = new Cheese("Ricotta", isExtra);
+                    pizza.addTopping(ricotta);
+                    System.out.println(PURPLE + "\nRicotta added!🙌" + RESET);
+                }
+                case "4" -> {
+                    while (true) {
+                        System.out.print(GREEN + "\nExtra Goat Cheese? (Y/N): " + RESET);
+                        String extraGoatCheese = scanner.nextLine();
+                        if (extraGoatCheese.equalsIgnoreCase("Y")) {
+                            isExtra = true;
+                            break;
+                        } else if (extraGoatCheese.equalsIgnoreCase("N")) {
+                            isExtra = false;
+                            break;
+                        } else {
+                            System.out.println("\n❌Invalid choice try again🔄️");
+                        }
+                    }
+                    Cheese goatCheese = new Cheese("Goat Cheese", isExtra);
+                    pizza.addTopping(goatCheese);
+                    System.out.println(PURPLE + "\nGoat Cheese added!🙌" + RESET);
+                }
+                case "5" -> {
+                    while (true) {
+                        System.out.print(GREEN + "\nExtra Buffalo? (Y/N): " + RESET);
+                        String extraBuffalo = scanner.nextLine();
+                        if (extraBuffalo.equalsIgnoreCase("Y")) {
+                            isExtra = true;
+                            break;
+                        } else if (extraBuffalo.equalsIgnoreCase("N")) {
+                            isExtra = false;
+                            break;
+                        } else {
+                            System.out.println("\n❌Invalid choice try again🔄️");
+                        }
+                    }
+                    Cheese buffalo = new Cheese("Buffalo", isExtra);
+                    pizza.addTopping(buffalo);
+                    System.out.println(PURPLE + "\nBuffalo added!🙌" + RESET);
+                }
+                case "0" -> {
+                    cheeseRunning = false;
+                }
+                default -> System.out.println("\n❌Invalid choice try again🔄️");
+            }
+        }
     }
 
     public void addDrink(){}
