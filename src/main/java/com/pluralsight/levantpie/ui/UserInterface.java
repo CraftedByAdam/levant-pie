@@ -561,7 +561,7 @@ public class UserInterface {
             System.out.println("2)Medium - $2.50");
             System.out.println("3)Large - $3.00");
             System.out.println("0)Cancel" + RESET);
-            System.out.println(WHITE + "\nEnter your choice: " + RESET);
+            System.out.print(WHITE + "\nEnter your choice: " + RESET);
             drinkSize = scanner.nextLine();
 
             switch (drinkSize) {
@@ -587,13 +587,39 @@ public class UserInterface {
         System.out.print(WHITE + "\nEnter drink flavor, example(Coke, Sprite, Lemonade): " + RESET);
         drinkFlavor = scanner.nextLine();
 
-        Drink drink = new Drink(drinkSize, drinkFlavor);
+        Drink drink = new Drink(drinkFlavor, drinkSize);
         order.addItem(drink);
 
         System.out.println(PURPLE + "\nDrink added!🙌" + RESET);
     }
 
-    public void addGarlicKnots(){}
+    public void addGarlicKnots(){
+        String garlicKnotFlavor = "";
+        String garlicKnotChoice = "";
+
+        boolean knotsRunning = true;
+        while (knotsRunning) {
+            System.out.println(GREEN + "Would you like Garlic Knots? $1.50");
+            System.out.println("1)Yes");
+            System.out.println("2)No" +  RESET);
+            System.out.print(WHITE + "\nEnter your choice: " + RESET);
+            garlicKnotChoice = scanner.nextLine();
+
+            switch (garlicKnotChoice) {
+                case "1" -> {
+                    System.out.print("What Flavor? example(Marinara, Parmesan...): ");
+                    garlicKnotFlavor = scanner.nextLine();
+                    System.out.println(PURPLE + "\nGarlic Knots added!🙌" + RESET);
+
+                    GarlicKnots garlicKnots = new GarlicKnots(garlicKnotFlavor);
+                    order.addItem(garlicKnots);
+                }
+                case "2" -> knotsRunning = false;
+
+                default -> System.out.println("\n❌Invalid choice try again🔄️");
+            }
+        }
+    }
 
     public void checkout(){}
 
