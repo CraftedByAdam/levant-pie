@@ -35,6 +35,6 @@ public class Drink implements IPayable {
 
     @Override
     public String toString() {
-        return size + " " + flavor + " -" + String.format("$%.2f", getPrice());
+        return getSize() + " " + getFlavor() + " -" + String.format("$%.2f", getPrice());
     }
 }
