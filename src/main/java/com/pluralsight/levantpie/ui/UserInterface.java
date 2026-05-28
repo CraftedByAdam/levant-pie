@@ -165,7 +165,6 @@ public class UserInterface {
             }
         }
         Pizza pizza = new Pizza(crustChoice, isStuffed, sizeChoice);
-        order.addItem(pizza);
 
         //meat menu
         boolean isExtra = false;
@@ -547,6 +546,7 @@ public class UserInterface {
                 default -> System.out.println("\n❌Invalid choice try again🔄️");
             }
         }
+        order.addItem(pizza);
     }
 
     public void addDrink(){}
