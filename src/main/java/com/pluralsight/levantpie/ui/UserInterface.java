@@ -621,7 +621,29 @@ public class UserInterface {
         }
     }
 
-    public void checkout(){}
+    public void checkout(){
+        order.displayOrder();
+        String confirmOrderChoice = "";
+
+        boolean checkoutRunning = true;
+        while (checkoutRunning) {
+            System.out.println(GREEN + "\n1) Confirm Order");
+            System.out.println("2)Cancel and return to order" +  RESET);
+            System.out.print(WHITE + "\nEnter your choice: " + RESET);
+            confirmOrderChoice = scanner.nextLine();
+
+            switch (confirmOrderChoice) {
+                case "1" -> {
+                    receiptFileManager.writeReceipt(order);
+                    System.out.println(PURPLE + "\nReceipt saved successfully!🙌" + RESET);
+                    checkoutRunning = false;
+                }
+                case "2" -> checkoutRunning = false;
+
+                default -> System.out.println("\n❌Invalid choice try again🔄️");
+            }
+        }
+    }
 
     public void displayPizza(Pizza pizza) {}
 
