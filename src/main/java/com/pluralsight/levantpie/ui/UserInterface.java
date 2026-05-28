@@ -187,29 +187,8 @@ public class UserInterface {
         addSauce(pizza);
 
         //sides menu
-        boolean sideRunning = true;
-        while (sideRunning) {
-            System.out.println(GREEN + "\nSelect Sides");
-            System.out.println("1)Red Pepper🌶️");
-            System.out.println("2)Parmesan🧀🧂");
-            System.out.println("0)Done adding sides" + RESET);
-            System.out.print(WHITE + "\nEnter your choice: " + RESET);
-            String sideChoice = scanner.nextLine();
+        addSide(pizza);
 
-            switch (sideChoice) {
-                case "1" -> {
-                    pizza.addTopping(new Side("Red Pepper"));
-                    System.out.println(PURPLE + "\nRed Pepper!🙌" + RESET);
-                }
-                case "2" -> {
-                    pizza.addTopping(new Side("Parmesan"));
-                    System.out.println(PURPLE + "\nParmesan added!🙌" + RESET);
-                }
-                case "0" -> sideRunning = false;
-
-                default -> System.out.println("\n❌Invalid choice try again🔄️");
-            }
-        }
         order.addItem(pizza);
     }
 
@@ -660,7 +639,31 @@ public class UserInterface {
         }
     }
 
-    private void addSide(Pizza pizza) {}
+    private void addSide(Pizza pizza) {
+        boolean sideRunning = true;
+        while (sideRunning) {
+            System.out.println(GREEN + "\nSelect Sides");
+            System.out.println("1)Red Pepper🌶️");
+            System.out.println("2)Parmesan🧀🧂");
+            System.out.println("0)Done adding sides" + RESET);
+            System.out.print(WHITE + "\nEnter your choice: " + RESET);
+            String sideChoice = scanner.nextLine();
+
+            switch (sideChoice) {
+                case "1" -> {
+                    pizza.addTopping(new Side("Red Pepper"));
+                    System.out.println(PURPLE + "\nRed Pepper!🙌" + RESET);
+                }
+                case "2" -> {
+                    pizza.addTopping(new Side("Parmesan"));
+                    System.out.println(PURPLE + "\nParmesan added!🙌" + RESET);
+                }
+                case "0" -> sideRunning = false;
+
+                default -> System.out.println("\n❌Invalid choice try again🔄️");
+            }
+        }
+    }
 
     private void pizzaMan() {
         System.out.println(GREEN + " " +
