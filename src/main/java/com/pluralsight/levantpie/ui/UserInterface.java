@@ -181,65 +181,7 @@ public class UserInterface {
         addCheese(pizza);
 
         //regular menu
-        boolean regularToppingRunning = true;
-        while (regularToppingRunning) {
-            System.out.println(GREEN + "\nSelect Toppings");
-            System.out.println("1)Onions🧅");
-            System.out.println("2)Mushrooms🍄‍🟫");
-            System.out.println("3)Bell Peppers🫑");
-            System.out.println("4)Olives🫒");
-            System.out.println("5)Tomatoes🍅");
-            System.out.println("6)Spinach🌿");
-            System.out.println("7)Basil🌿");
-            System.out.println("8)Pineapple🍍");
-            System.out.println("9)Anchovies🐟");
-            System.out.println("0)Done adding Toppings" + RESET);
-            System.out.print(WHITE + "\nEnter your choice: " + RESET);
-            String regularToppingChoice = scanner.nextLine();
-
-            switch (regularToppingChoice) {
-                case "1" -> {
-                    pizza.addTopping(new Regular("Onions"));
-                    System.out.println(PURPLE + "\nOnions added!🙌" + RESET);
-                }
-                case "2" -> {
-                    pizza.addTopping(new Regular("Mushrooms"));
-                    System.out.println(PURPLE + "\nMushrooms added!🙌" + RESET);
-                }
-                case "3" -> {
-                    pizza.addTopping(new Regular("Bell Peppers"));
-                    System.out.println(PURPLE + "\nBell Peppers added!🙌" + RESET);
-                }
-
-                case "4" -> {
-                    pizza.addTopping(new Regular("Olives"));
-                    System.out.println(PURPLE + "\nOlives added!🙌" + RESET);
-                }
-                case "5" -> {
-                    pizza.addTopping(new Regular("Tomatoes"));
-                    System.out.println(PURPLE + "\nTomatoes added!🙌" + RESET);
-                }
-                case "6" -> {
-                    pizza.addTopping(new Regular("Spinach"));
-                    System.out.println(PURPLE + "\nSpinach added!🙌" + RESET);
-                }
-                case "7" -> {
-                    pizza.addTopping(new Regular("Basil"));
-                    System.out.println(PURPLE + "\nBasil added!🙌" + RESET);
-                }
-                case "8" -> {
-                    pizza.addTopping(new Regular("Pineapple"));
-                    System.out.println(PURPLE + "\nPineapple added!🙌" + RESET);
-                }
-                case "9" -> {
-                    pizza.addTopping(new Regular("Anchovies"));
-                    System.out.println(PURPLE + "\nAnchovies added!🙌" + RESET);
-                }
-                case "0" -> regularToppingRunning = false;
-
-                default -> System.out.println("\n❌Invalid choice try again🔄️");
-            }
-        }
+        addRegular(pizza);
 
         //sauce menu
         boolean sauceRunning = true;
@@ -537,6 +479,7 @@ public class UserInterface {
             }
         }
     }
+
     private void addCheese(Pizza pizza) {
         boolean isExtra = false;
         boolean cheeseRunning = true;
@@ -650,9 +593,69 @@ public class UserInterface {
             }
         }
     }
-    private void addRegular(Pizza pizza) {
 
+    private void addRegular(Pizza pizza) {
+        boolean regularToppingRunning = true;
+        while (regularToppingRunning) {
+            System.out.println(GREEN + "\nSelect Toppings");
+            System.out.println("1)Onions🧅");
+            System.out.println("2)Mushrooms🍄‍🟫");
+            System.out.println("3)Bell Peppers🫑");
+            System.out.println("4)Olives🫒");
+            System.out.println("5)Tomatoes🍅");
+            System.out.println("6)Spinach🌿");
+            System.out.println("7)Basil🌿");
+            System.out.println("8)Pineapple🍍");
+            System.out.println("9)Anchovies🐟");
+            System.out.println("0)Done adding Toppings" + RESET);
+            System.out.print(WHITE + "\nEnter your choice: " + RESET);
+            String regularToppingChoice = scanner.nextLine();
+
+            switch (regularToppingChoice) {
+                case "1" -> {
+                    pizza.addTopping(new Regular("Onions"));
+                    System.out.println(PURPLE + "\nOnions added!🙌" + RESET);
+                }
+                case "2" -> {
+                    pizza.addTopping(new Regular("Mushrooms"));
+                    System.out.println(PURPLE + "\nMushrooms added!🙌" + RESET);
+                }
+                case "3" -> {
+                    pizza.addTopping(new Regular("Bell Peppers"));
+                    System.out.println(PURPLE + "\nBell Peppers added!🙌" + RESET);
+                }
+
+                case "4" -> {
+                    pizza.addTopping(new Regular("Olives"));
+                    System.out.println(PURPLE + "\nOlives added!🙌" + RESET);
+                }
+                case "5" -> {
+                    pizza.addTopping(new Regular("Tomatoes"));
+                    System.out.println(PURPLE + "\nTomatoes added!🙌" + RESET);
+                }
+                case "6" -> {
+                    pizza.addTopping(new Regular("Spinach"));
+                    System.out.println(PURPLE + "\nSpinach added!🙌" + RESET);
+                }
+                case "7" -> {
+                    pizza.addTopping(new Regular("Basil"));
+                    System.out.println(PURPLE + "\nBasil added!🙌" + RESET);
+                }
+                case "8" -> {
+                    pizza.addTopping(new Regular("Pineapple"));
+                    System.out.println(PURPLE + "\nPineapple added!🙌" + RESET);
+                }
+                case "9" -> {
+                    pizza.addTopping(new Regular("Anchovies"));
+                    System.out.println(PURPLE + "\nAnchovies added!🙌" + RESET);
+                }
+                case "0" -> regularToppingRunning = false;
+
+                default -> System.out.println("\n❌Invalid choice try again🔄️");
+            }
+        }
     }
+
     private void addSauce(Pizza pizza) {}
     private void addSide(Pizza pizza) {}
 
