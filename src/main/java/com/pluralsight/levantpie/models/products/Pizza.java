@@ -70,7 +70,7 @@ public class Pizza implements IPayable {
             stringBuilder.append("\n");
             stringBuilder.append("Topping: ").append(topping.getToppingName());
         }
-        stringBuilder.append("Price: ");
+        stringBuilder.append("\nPizza Price: ");
         stringBuilder.append(String.format("$%.2f", getPrice()));
 
         return stringBuilder.toString();
