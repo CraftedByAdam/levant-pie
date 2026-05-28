@@ -100,8 +100,8 @@ public class UserInterface {
         String stuffedCrustChoice;
 
         //crust type
-        label:
-        while (true) {
+        boolean crustRunning = true;
+        while (crustRunning) {
             System.out.println(GREEN + "\nWhat Kind of crust would you like?");
             System.out.println("1)Thin");
             System.out.println("2)Regular");
@@ -113,16 +113,20 @@ public class UserInterface {
             switch (crustChoice) {
                 case "1":
                     crustChoice = "Thin";
-                    break label;
+                    crustRunning = false;
+                    break;
                 case "2":
                     crustChoice = "Regular";
-                    break label;
+                    crustRunning = false;
+                    break;
                 case "3":
                     crustChoice = "Thick";
-                    break label;
+                    crustRunning = false;
+                    break;
                 case "4":
                     crustChoice = "Cauliflower";
-                    break label;
+                    crustRunning = false;
+                    break;
                 default:
                     System.out.println("\n❌Invalid choice try again🔄️");
                     break;
