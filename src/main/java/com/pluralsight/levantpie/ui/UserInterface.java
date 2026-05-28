@@ -26,11 +26,10 @@ public class UserInterface {
     //attributes
     private Scanner scanner;
     private Order order;
-    private ReceiptFileManager receiptFileManager;
 
     public UserInterface() {
         this.scanner = new Scanner(System.in);
-        this.receiptFileManager = new ReceiptFileManager();
+        //this.receiptFileManager = new ReceiptFileManager();
     }
 
     public void displayHomeScreen(){
@@ -85,7 +84,10 @@ public class UserInterface {
                     addGarlicKnots();
                     break;
                 case "4":
-                    checkout();
+                    boolean isDone = checkout();
+                    if (isDone) {
+                        running = false;
+                    }
                     break;
                 case "5":
                     running = false;
@@ -614,24 +616,26 @@ public class UserInterface {
         }
     }
 
-    public void checkout(){
+    public boolean checkout(){
         order.displayOrder();
         String confirmOrderChoice = "";
 
-        boolean checkoutRunning = true;
-        while (checkoutRunning) {
+        while (true) {
             System.out.println(GREEN + "\n1) Confirm Order");
-            System.out.println("2)Cancel and return to order" +  RESET);
+            System.out.println("2)Cancel and return to order" + RESET);
             System.out.print(WHITE + "\nEnter your choice: " + RESET);
             confirmOrderChoice = scanner.nextLine();
 
             switch (confirmOrderChoice) {
                 case "1" -> {
+                    ReceiptFileManager receiptFileManager = new ReceiptFileManager();
                     receiptFileManager.writeReceipt(order);
                     System.out.println(PURPLE + "\nReceipt saved successfully!🙌" + RESET);
-                    checkoutRunning = false;
+                    return true;
                 }
-                case "2" -> checkoutRunning = false;
+                case "2" -> {
+                    return false;
+                }
 
                 default -> System.out.println("\n❌Invalid choice try again🔄️");
             }
