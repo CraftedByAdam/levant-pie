@@ -61,14 +61,14 @@ public class Pizza implements IPayable {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Pizza Order:\n");
         stringBuilder.append("-------------\n");
-        stringBuilder.append("Size: ").append(size).append("inch\n") ;
-        stringBuilder.append(crustType).append(" ") ;
-        if (isStuffed) {
+        stringBuilder.append("Size: ").append(getSize()).append("inch\n") ;
+        stringBuilder.append(getCrustType()).append(" ") ;
+        if (isStuffed()) {
             stringBuilder.append("stuffed crust");
         }
-        for (Topping topping : toppings) {
+        for (Topping topping : getToppings()) {
             stringBuilder.append("\n");
-            stringBuilder.append("Topping: ").append(topping.getToppingName()).append("\n");
+            stringBuilder.append("Topping: ").append(topping.getToppingName());
         }
         stringBuilder.append("Price: ");
         stringBuilder.append(String.format("$%.2f", getPrice()));
