@@ -549,7 +549,49 @@ public class UserInterface {
         order.addItem(pizza);
     }
 
-    public void addDrink(){}
+    public void addDrink(){
+        String drinkSize = "";
+        String drinkFlavor = "";
+
+        //drink size
+        boolean sizeRunning = true;
+        while (sizeRunning) {
+            System.out.println(GREEN + "\nSelect a drink size");
+            System.out.println("1)Small - $2.00");
+            System.out.println("2)Medium - $2.50");
+            System.out.println("3)Large - $3.00");
+            System.out.println("0)Cancel" + RESET);
+            System.out.println(WHITE + "\nEnter your choice: " + RESET);
+            drinkSize = scanner.nextLine();
+
+            switch (drinkSize) {
+                case "1" -> {
+                    drinkSize = "Small";
+                    sizeRunning = false;
+                }
+                case "2" -> {
+                    drinkSize = "Medium";
+                    sizeRunning = false;
+               }
+               case "3" -> {
+                    drinkSize = "Large";
+                    sizeRunning = false;
+              }
+              case "0" -> sizeRunning = false;
+
+              default -> System.out.println("\n❌Invalid choice try again🔄️");
+            }
+        }
+
+        //drink flavor
+        System.out.print(WHITE + "\nEnter drink flavor, example(Coke, Sprite, Lemonade): " + RESET);
+        drinkFlavor = scanner.nextLine();
+
+        Drink drink = new Drink(drinkSize, drinkFlavor);
+        order.addItem(drink);
+
+        System.out.println(PURPLE + "\nDrink added!🙌" + RESET);
+    }
 
     public void addGarlicKnots(){}
 
