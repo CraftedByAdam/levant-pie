@@ -645,12 +645,6 @@ public class UserInterface {
         }
     }
 
-    public void displayPizza(Pizza pizza) {}
-
-    public void displayDrink(Drink drink) {}
-
-    public void displayGarlicKnots(GarlicKnots garlicKnots) {}
-
     private void pizzaMan() {
         System.out.println(GREEN + " " +
                  " ____                   \n" +
