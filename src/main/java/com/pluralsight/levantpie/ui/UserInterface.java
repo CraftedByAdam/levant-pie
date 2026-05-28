@@ -23,6 +23,7 @@ public class UserInterface {
     private static final String RED = "\u001B[31m";
     private static final String WHITE = "\u001B[37m";
 
+    //attributes
     private Scanner scanner;
     private Order order;
     private ReceiptFileManager receiptFileManager;
@@ -36,11 +37,11 @@ public class UserInterface {
         storeLogo();
         pizzaMan();
 
+        //main menu
         boolean running = true;
         while(running){
             System.out.println(BLUE + "1)New Order🛍️" + RESET);
             System.out.println(RED + "0)Exit👋\n" + RESET);
-
             System.out.print(WHITE + "Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
@@ -60,8 +61,9 @@ public class UserInterface {
     }
 
     public void displayOrderScreen(){
-        boolean running = true;
 
+        //order screen
+        boolean running = true;
         while(running){
             System.out.println(GREEN + "\n1)Add Pizza🍕");
             System.out.println("2)Add Drink🥤");
@@ -434,12 +436,10 @@ public class UserInterface {
                     pizza.addTopping(new Regular("Onions"));
                     System.out.println(PURPLE + "\nOnions added!🙌" + RESET);
                 }
-
                 case "2" -> {
                     pizza.addTopping(new Regular("Mushrooms"));
                     System.out.println(PURPLE + "\nMushrooms added!🙌" + RESET);
                 }
-
                 case "3" -> {
                     pizza.addTopping(new Regular("Bell Peppers"));
                     System.out.println(PURPLE + "\nBell Peppers added!🙌" + RESET);
@@ -449,32 +449,26 @@ public class UserInterface {
                     pizza.addTopping(new Regular("Olives"));
                     System.out.println(PURPLE + "\nOlives added!🙌" + RESET);
                 }
-
                 case "5" -> {
                     pizza.addTopping(new Regular("Tomatoes"));
                     System.out.println(PURPLE + "\nTomatoes added!🙌" + RESET);
                 }
-
                 case "6" -> {
                     pizza.addTopping(new Regular("Spinach"));
                     System.out.println(PURPLE + "\nSpinach added!🙌" + RESET);
                 }
-
                 case "7" -> {
                     pizza.addTopping(new Regular("Basil"));
                     System.out.println(PURPLE + "\nBasil added!🙌" + RESET);
                 }
-
                 case "8" -> {
                     pizza.addTopping(new Regular("Pineapple"));
                     System.out.println(PURPLE + "\nPineapple added!🙌" + RESET);
                 }
-
                 case "9" -> {
                     pizza.addTopping(new Regular("Anchovies"));
                     System.out.println(PURPLE + "\nAnchovies added!🙌" + RESET);
                 }
-
                 case "0" -> regularToppingRunning = false;
 
                 default -> System.out.println("\n❌Invalid choice try again🔄️");
@@ -499,27 +493,22 @@ public class UserInterface {
                     pizza.addTopping(new Sauce("Marinara"));
                     System.out.println(PURPLE + "\nMarinara added!🙌" + RESET);
                 }
-
                 case "2" -> {
                     pizza.addTopping(new Sauce("Alfredo"));
                     System.out.println(PURPLE + "\nAlfredo added!🙌" + RESET);
                 }
-
                 case "3" -> {
                     pizza.addTopping(new Sauce("Pesto"));
                     System.out.println(PURPLE + "\nPesto added!🙌" + RESET);
                 }
-
                 case "4" -> {
                     pizza.addTopping(new Sauce("BBQ"));
                     System.out.println(PURPLE + "\nBBQ added!🙌" + RESET);
                 }
-
                 case "5" -> {
                     pizza.addTopping(new Sauce("Olive Oil"));
                     System.out.println(PURPLE + "\nOlive Oil added!🙌" + RESET);
                 }
-
                 case "0" -> sauceRunning = false;
 
                 default -> System.out.println("\n❌Invalid choice try again🔄️");
