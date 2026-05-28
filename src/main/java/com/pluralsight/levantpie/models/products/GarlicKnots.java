@@ -3,7 +3,6 @@ package com.pluralsight.levantpie.models.products;
 import com.pluralsight.levantpie.order.IPayable;
 
 public class GarlicKnots implements IPayable {
-
     private String flavor;
 
     public GarlicKnots(String flavor) {
@@ -21,6 +20,6 @@ public class GarlicKnots implements IPayable {
 
     @Override
     public String toString() {
-        return "Garlic Knots "  + getFlavor() + " $" + getPrice();
+        return "Garlic Knots "  + getFlavor() + String.format(" $%.2f", getPrice());
     }
 }
