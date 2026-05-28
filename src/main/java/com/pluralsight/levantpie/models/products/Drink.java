@@ -23,11 +23,11 @@ public class Drink implements IPayable {
     @Override
     public double getPrice() {
         double price = 0;
-        if (size.equalsIgnoreCase("S") || size.equalsIgnoreCase("Small")) {
+        if (size.equalsIgnoreCase("Small")) {
             price = 2.00;
-        }else if (size.equalsIgnoreCase("M") || size.equalsIgnoreCase("Medium")) {
+        }else if (size.equalsIgnoreCase("Medium")) {
             price = 2.50;
-        }else if (size.equalsIgnoreCase("L") || size.equalsIgnoreCase("Large")) {
+        }else if (size.equalsIgnoreCase("Large")) {
             price = 3.00;
         }
         return price;
